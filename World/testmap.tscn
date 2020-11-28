@@ -1,0 +1,118 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Screens/SceneTransition.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/maptest.png" type="Texture" id=3]
+[ext_resource path="res://World/testmap.gd" type="Script" id=4]
+[ext_resource path="res://World/ArtWork.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Screens/ArtInfo.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Screens/HUD.tscn" type="PackedScene" id=7]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 758.32, 714.078 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D"]
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -790.864, -710.483, -24.666, -713.153, -24.666, -969.442, 810.944, -966.772, 810.944, -291.343, 725.514, -286.004, 725.514, 432.14, 960.446, 434.809, 960.446, 1027.48, 119.497, 1032.82, 122.166, 693.768, -144.802, 696.438, -144.802, 1035.49, -900.321, 1024.81, -894.982, 440.149, -638.692, 434.809, -636.023, 146.484, -152.811, 141.145, -158.15, 432.14, 333.071, 432.14, 338.187, -295.078, 98.1865, -297.078, 100.809, 18.3394, -796.203, 18.3394, -792.318, -692.237, -770.492, -691.444, -777.516, -0.348389, 87.1865, 3.922, 85.1865, -313.078, 358.187, -313.078, 359.768, 458.837, -192.856, 450.828, -174.168, 159.832, -617.335, 170.511, -617.335, 453.497, -884.303, 453.497, -878.964, 1006.12, -166.159, 1008.79, -168.829, 667.072, 146.193, 669.741, 140.854, 1006.12, 936.419, 998.112, 939.088, 456.167, 693.478, 456.167, 701.487, -320.71, 786.917, -318.04, 786.917, -948.085, -3.30859, -948.085, -0.638916, -691.795, -767.317, -691.444, -796.203, -689.126 )
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 205.714, 242.757 )
+
+[node name="ArtWorks" type="Node2D" parent="."]
+
+[node name="ArtWork" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 6.34961, 219.061 )
+
+[node name="ArtWork2" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 203.187, 54.6193 )
+rotation = 1.57079
+
+[node name="ArtWork3" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 547.903, 60.5811 )
+rotation = 1.57079
+
+[node name="ArtWork4" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 22.4556, 540.116 )
+
+[node name="ArtWork5" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 220.235, 672.86 )
+rotation = 1.55272
+
+[node name="ArtWork6" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 512.45, 675.532 )
+rotation = 1.55272
+
+[node name="ArtWork7" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 807.337, 568.624 )
+rotation = -0.00938141
+
+[node name="ArtWork8" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 981.954, 364.609 )
+rotation = 1.55874
+
+[node name="ArtWork9" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 792.192, -110.24 )
+rotation = -0.00139233
+
+[node name="ArtWork10" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 956.117, -193.094 )
+rotation = -1.56757
+
+[node name="ArtWork11" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 1193.99, -190.421 )
+rotation = -1.56757
+
+[node name="ArtWork12" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 1438.09, -186.858 )
+rotation = -1.56757
+
+[node name="ArtWork13" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 1509.37, 90.2117 )
+rotation = -3.14842
+
+[node name="ArtWork14" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 1149.03, 602.942 )
+rotation = -3.14842
+
+[node name="ArtWork15" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 1150.61, 836.29 )
+rotation = -3.14842
+
+[node name="ArtWork16" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 1149.03, 1020.43 )
+rotation = -3.14842
+
+[node name="ArtWork17" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 1434.76, 788.668 )
+rotation = -3.14842
+
+[node name="ArtWork18" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 942.663, 1549.03 )
+rotation = -3.14842
+
+[node name="ArtWork19" parent="ArtWorks" instance=ExtResource( 5 )]
+position = Vector2( 1658.58, 1534.75 )
+rotation = -3.14842
+
+[node name="ArtInfoOverlay" type="CanvasLayer" parent="."]
+
+[node name="ArtInfo" parent="ArtInfoOverlay" instance=ExtResource( 6 )]
+visible = false
+
+[node name="HUDLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="HUD" parent="HUDLayer" instance=ExtResource( 7 )]
+
+[node name="SceneTransition" parent="." instance=ExtResource( 2 )]
+[connection signal="collected" from="ArtInfoOverlay/ArtInfo" to="." method="_on_ArtInfo_collected"]

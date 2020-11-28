@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/background.png" type="Texture" id=1]
+[ext_resource path="res://World/fill.png" type="Texture" id=2]
+[ext_resource path="res://World/CollectProgress.gd" type="Script" id=3]
+
+[node name="CollectProgress" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -96.2827
+margin_top = -10.9317
+margin_right = 95.7173
+margin_bottom = 29.0683
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = -96.2827
+margin_top = -10.9317
+margin_right = 95.7173
+margin_bottom = 29.0683
+texture_progress = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

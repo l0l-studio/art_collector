@@ -1,0 +1,62 @@
+extends Control
+
+signal collect
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+onready var timer = get_node("ProgressGroup/Timer")
+onready var pb =  get_node("ProgressGroup/CollectProgress")
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+
+	self.connect("collect", pb, "_on_Progress_changed")
+	
+	
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	#print(Input.is_action_pressed("collect"))
+	#pass
+	if Input.is_action_pressed("collect"):
+		$ProgressGroup.visible = true
+		#emit_signal("collect", 1)
+        print(pb.get_max_duration())
+        print(timer.time_left)
+		pb._on_Progress_changed(pb.get_max_duration() - timer.time_left)
+		print("collecting")
+	else:
+		$ProgressGroup.visible = false
+		pass
+	#if Input.is_action_released("collect"):
+	#	$ProgressGroup.visible = false
+	#	print("stopped collecting")
+
+#func _input(event):
+#	if event.is_action_pressed("collect"):
+#		$ProgressGroup.visible = true
+#		emit_signal("collect", 1)
+#		print("collecting")
+#	if event.is_action_released("collect"):
+#		$ProgressGroup.visible = false
+#		print("stopped collecting")
+
+func _input(event):
+    if event.is_action_pressed("collect"):
+        timer.wait_time = pb.get_max_duration()
+        timer.start()
+
+
+func view_art_overlay(data):
+	print("THis is from artINFO")
+	print(data)
+	pb.set_max_duration(data.time_to_collect)
+	self.visible = not self.visible
+
+func close_art_overlay(data):
+	self.visible = not self.visible

@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Screens/HUD.gd" type="Script" id=2]
+
+[node name="HUD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time_Label" type="Label" parent="."]
+margin_left = 39.0
+margin_top = 43.0
+margin_right = 104.0
+margin_bottom = 83.0
+theme = ExtResource( 1 )
+text = "Time:"
+
+[node name="Score_Capacity_Label" type="Label" parent="."]
+margin_left = 786.0
+margin_top = 474.0
+margin_right = 884.0
+margin_bottom = 533.0
+theme = ExtResource( 1 )
+text = "Score:
+Capacity:"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="."]
+margin_left = 104.0
+margin_top = 43.0
+margin_right = 169.0
+margin_bottom = 69.0
+theme = ExtResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="score" type="Label" parent="."]
+margin_left = 894.0
+margin_top = 474.0
+margin_right = 959.0
+margin_bottom = 500.0
+theme = ExtResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="capacity" type="Label" parent="."]
+margin_left = 894.0
+margin_top = 507.296
+margin_right = 959.0
+margin_bottom = 533.296
+theme = ExtResource( 1 )
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
