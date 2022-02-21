@@ -11,7 +11,6 @@ onready var capacity_node = get_node("capacity")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	pass # Replace with function body.
 
 
@@ -25,3 +24,6 @@ func _on_Collected(data):
 	time_node.text = String(current_state.time)
 	score_node.text = String(current_state.score)
 	capacity_node.text = String(current_state.capacity)
+
+func _initialize():
+	capacity_node.text = String(Global._get_state().capacity)

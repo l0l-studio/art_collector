@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Future Samples_Lo-Fi Hip Hop_Loop 13_75 BPM_Bbm.wav-5b9abd610288d012eb50da3e098dfbf2.sample"
+
+[deps]
+
+source_file="res://assets/Future Samples_Lo-Fi Hip Hop_Loop 13_75 BPM_Bbm.wav"
+dest_files=[ "res://.import/Future Samples_Lo-Fi Hip Hop_Loop 13_75 BPM_Bbm.wav-5b9abd610288d012eb50da3e098dfbf2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

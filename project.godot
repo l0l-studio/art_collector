@@ -10,7 +10,6 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
@@ -24,6 +23,7 @@ config/icon="res://Characters/icon.png"
 
 utils="*res://helpers/utils.gd"
 Global="*res://World/Global.gd"
+WebMonetization="*res://WebMonetization.gd"
 
 [display]
 
@@ -75,4 +75,5 @@ collect={
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"

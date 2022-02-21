@@ -20,10 +20,12 @@ var active_artwork = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
 	#self.connect("collected", pb, "_on_Progress_changed")
-	
-	
+	WebMonetization.connect("on_monetization_started", self, "_on_monetization_started")
+	WebMonetization.connect("on_monetization_stopped", self, "_on_monetization_stopped")
+	if WebMonetization.is_paying():
+		print("Should should high res")
+		$ColorRect/ColorRect/PixelizeFilter.visible = false
 	pass # Replace with function body.
 
 
@@ -95,3 +97,10 @@ func close_art_overlay(artworkNode, data):
 
 func  _on_Timeout():
 	emit_signal("collected", active_artwork)
+	$Collected.play()
+
+func _on_monetization_started():
+	$ColorRect/ColorRect/PixelizeFilter.visible = false
+
+func _on_monetization_stopped():
+	$ColorRect/ColorRect/PixelizeFilter.visible = true

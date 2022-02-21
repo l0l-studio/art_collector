@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/e_perc.wav-fc3fa547d75da89a3b75e773dbc748a1.sample"
+
+[deps]
+
+source_file="res://assets/e_perc.wav"
+dest_files=[ "res://.import/e_perc.wav-fc3fa547d75da89a3b75e773dbc748a1.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,7 +1,8 @@
 extends Node
 
 const TYPE_MAP = {
-		".png": ".stex"
+		".png": ".stex",
+		".jpg": ".stex"
 		}
 
 static func get_input_direction(event = Input):
@@ -18,8 +19,6 @@ static func list_files_in_directory(path, identifier, type):
 	dir.open(path)
 	dir.list_dir_begin()
 
-	print(TYPE_MAP[type])
-
 	while true:
 		var file = dir.get_next()
 		var filename = file.rsplit("-")[0]
@@ -30,8 +29,6 @@ static func list_files_in_directory(path, identifier, type):
 		#do the search for files in the .import directory
 
 	dir.list_dir_end()
-	
-	print("This is from UTILS", files)
 
 	return files
 

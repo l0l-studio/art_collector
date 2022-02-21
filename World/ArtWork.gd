@@ -7,7 +7,7 @@ extends Node2D
 signal viewArt(data)
 signal closeArt
 
-const TIME_MIN_MAX = [3,10]
+const TIME_MIN_MAX = [3,5]
 
 # data stores name, time_to_collect, points/value etc
 var data = {}
@@ -32,7 +32,7 @@ func initialize(name, texture):
 	data.texture = texture
 	#bell curved more likely to spawn lower/average values
 	data.time_to_collect = TIME_MIN_MAX[0] + int(round(abs(rng.randfn(0.0, TIME_MIN_MAX[1]))))
-	data.value = data.time_to_collect * data.time_to_collect
+	data.value = int(round(pow(data.time_to_collect * rand_range(2,5), 2)))
 
 func get_data():
 	return data

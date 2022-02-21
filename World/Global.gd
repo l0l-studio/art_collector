@@ -25,7 +25,9 @@ func set_targets(value):
 	_targets = value
 
 func _add_score(points):
+	print("Points before increased: ", _score)
 	_score += points
+	print("Points after increased: ", _score)
 
 func _add_to_collected(art):
 	_collected.append(art)
@@ -52,4 +54,8 @@ func _get_time():
 	return _time
 	
 
+func _reset():
+	_time = 0
+	_score = 0
+	_collected = []
 

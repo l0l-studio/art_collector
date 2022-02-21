@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://World/main_plant.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 100.936
+
+[node name="Node2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="main_plant" type="Sprite" parent="."]
+texture = ExtResource( 1 )

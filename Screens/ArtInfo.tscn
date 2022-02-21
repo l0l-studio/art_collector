@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Screens/ArtInfo.gd" type="Script" id=1]
 [ext_resource path="res://World/CollectProgress.tscn" type="PackedScene" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://fonts/Montserrat-Medium.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://fonts/Pacifico-Regular.ttf" type="DynamicFontData" id=15]
 [ext_resource path="res://assets/pixelize.shader" type="Shader" id=16]
+[ext_resource path="res://assets/collected.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/show_art.wav" type="AudioStream" id=18]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 16 )
@@ -49,6 +51,20 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("Show_Art")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.690376,
+"start_offset": 0.0,
+"stream": ExtResource( 18 )
+} ],
+"times": PoolRealArray( 0 )
 }
 
 [node name="ArtInfo" type="Control"]
@@ -116,19 +132,14 @@ __meta__ = {
 }
 
 [node name="Artwork_image" type="Sprite" parent="ColorRect/ColorRect"]
-position = Vector2( 187.482, 129.801 )
+position = Vector2( 187.482, 135.077 )
 scale = Vector2( 0.118216, 0.118216 )
 texture = ExtResource( 10 )
 
-[node name="PixelizeFilter" type="TextureRect" parent="ColorRect"]
+[node name="PixelizeFilter" type="TextureRect" parent="ColorRect/ColorRect"]
 material = SubResource( 1 )
-anchor_top = 0.167
-anchor_right = 0.611
-anchor_bottom = 0.817
-margin_left = 5.0
-margin_top = 0.199997
-margin_right = 7.39999
-margin_bottom = 0.199982
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 texture = ExtResource( 4 )
@@ -259,3 +270,9 @@ texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fade = SubResource( 5 )
+
+[node name="Collected" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="Show_Art" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
